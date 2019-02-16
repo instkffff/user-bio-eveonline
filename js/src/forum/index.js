@@ -33,7 +33,7 @@ export default class UserBio extends Component {
 
 app.initializers.add('instkffff-user-bio',()=> {
     User.prototype.bio = Model.attribute('bio')
-    User.prototype.bioHtml = <p> {User.proptotype.bio} </p>
+    User.prototype.bioHtml = <p> {User.prototype.bio} </p>
 
     extend(UserCard.prototype, 'infoItems' ,function(items){
         let user = this.props.user;
