@@ -17,16 +17,18 @@ export default class UserBio extends Component {
 
         const esiInfoJson = user.bio()
         let esiInfo = JSON.parse(esiInfoJson)
+        let alliance_pic = `https://imageserver.eveonline.com/Alliance/${esiInfo.alliance_id}_32.png`
+        let corporation_pic = `https://imageserver.eveonline.com/Corporation/${esiInfo.corporation_id}_32.png`
 
-        let allianceIcon = `https://imageserver.eveonline.com/Alliance/${esiInfo.alliance_id}_32.png` 
-        subContent = m.trust(allianceIcon)
+        let biohtml = <p><img src={alliance_pic} alt="" />{esiInfo.alliance_name}<img src={corporation_pic} alt="" />{esiInfo.corporation_name}</p>
+
+
+        subContent = m.trust(biohtml)
         
-
-        content = <div className="UserBio-content">{subContent}</div>
 
         return (
             <div className="UserBio">
-                {content}
+                {subContent}
             </div>
         )
     }
