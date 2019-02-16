@@ -15,8 +15,11 @@ export default class UserBio extends Component {
         let content
         let subContent
 
-        const bioHtml = user.bio()
-        subContent = m.trust(bioHtml)
+        const esiInfoJson = user.bio()
+        let esiInfo = JSON.parse(esiInfoJson)
+
+        let allianceIcon = `https://imageserver.eveonline.com/Alliance/${esiInfo.alliance_id}_32.png` 
+        subContent = m.trust(allianceIcon)
         
 
         content = <div className="UserBio-content">{subContent}</div>
@@ -32,7 +35,6 @@ export default class UserBio extends Component {
 
 app.initializers.add('instkffff-user-bio',()=> {
     User.prototype.bio = Model.attribute('bio')
-    //User.prototype.bioHtml = <p> {User.prototype.bio} </p>
 
     extend(UserCard.prototype, 'infoItems' ,function(items){
         let user = this.props.user;
