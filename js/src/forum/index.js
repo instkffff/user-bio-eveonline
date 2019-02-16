@@ -3,7 +3,6 @@ import 'autolink-js'
 import Component from 'flarum/Component'
 import computed from 'flarum/utils/computed'
 import UserCard from 'flarum/components/UserCard'
-import LoadingIndicator from 'flarum/components/LoadingIndicator';
 import classList from 'flarum/utils/classList'
 import Model from 'flarum/Model'
 import User from 'flarum/models/User'
@@ -33,8 +32,8 @@ export default class UserBio extends Component {
 
 
 app.initializers.add('instkffff-user-bio',()=> {
-    User.proptotype.bio = Model.attribute('bio')
-    User.proptotype.bioHtml = <p> {User.proptotype.bio} </p>
+    User.prototype.bio = Model.attribute('bio')
+    User.prototype.bioHtml = <p> {User.proptotype.bio} </p>
 
     extend(UserCard.prototype, 'infoItems' ,function(items){
         let user = this.props.user;
