@@ -3,7 +3,7 @@
     "description": "user-bio for eveonline",
     "keywords": [
         "flarum",
-        "Friends of Flarum"
+        "Friends of Flarum",
         "eveonline"
     ],
     "type": "flarum-extension",
