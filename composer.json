@@ -1,5 +1,5 @@
 {
-    "name": "instkffff/user-bio",
+    "name": "instkffff/user-bio-eveonline",
     "description": "user-bio for eveonline",
     "keywords": [
         "flarum",
@@ -21,7 +21,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Instkffff\\UserBio\\": "src/"
+            "Instkffff\\UserBioEve\\": "src/"
         }
     },
     "extra": {
