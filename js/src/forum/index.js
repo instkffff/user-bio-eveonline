@@ -1,5 +1,6 @@
 import { extend } from 'flarum/extend'
 import 'autolink-js'
+import Component from 'flarum/Component'
 import computed from 'flarum/utils/computed'
 import UserCard from 'flarum/components/UserCard'
 import LoadingIndicator from 'flarum/components/LoadingIndicator';
