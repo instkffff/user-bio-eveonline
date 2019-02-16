@@ -15,9 +15,7 @@ export default class UserBio extends Component {
         let content
         let subContent
 
-        
-        const bioHtml = user.bioHtml()
-        subContent = m.trust(bioHtml)
+        subContent = m.trust(User.prototype.bioHtml)
         
 
         content = <div className="UserBio-content">{subContent}</div>
@@ -32,7 +30,7 @@ export default class UserBio extends Component {
 
 
 app.initializers.add('instkffff-user-bio',()=> {
-    User.prototype.bio = Model.attribute('bio')
+    User.prototype.bio = Model.attribute('bio').user
     User.prototype.bioHtml = <p> {User.prototype.bio} </p>
 
     extend(UserCard.prototype, 'infoItems' ,function(items){
