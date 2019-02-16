@@ -26,9 +26,7 @@ export default class UserBio extends Component {
 
         return (
             <div className="UserBio">
-                <p>
-                    <img src={alliance_pic} alt="" />{esiInfo.alliance_name}<img src={corporation_pic} alt="" />{esiInfo.corporation_name}
-                </p>
+                <img className="alliance" src={alliance_pic} alt="" /><p className="esiname">{esiInfo.alliance_name}</p><img className="corp" src={corporation_pic} alt="" /><p className="esiname">{esiInfo.corporation_name}</p>
             </div>
         )
     }
