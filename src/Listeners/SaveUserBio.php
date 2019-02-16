@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\UserBio\Listeners;
+namespace Instkffff\UserBio\Listeners;
 
 use Flarum\User\AssertPermissionTrait;
 use Flarum\User\Event\Saving;
