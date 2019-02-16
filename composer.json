@@ -1,9 +1,10 @@
 {
-    "name": "fof/user-bio",
-    "description": "Add the user bio back into Flarum",
+    "name": "instkffff/user-bio",
+    "description": "user-bio for eveonline",
     "keywords": [
         "flarum",
         "Friends of Flarum"
+        "eveonline"
     ],
     "type": "flarum-extension",
     "license": "MIT",
@@ -20,12 +21,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "FoF\\UserBio\\": "src/"
+            "Instkffff\\UserBio\\": "src/"
         }
     },
     "extra": {
         "flarum-extension": {
-            "title": "FoF User Bio",
+            "title": "User Bio EveOnline",
             "icon": {
                 "name": "fas fa-pen",
                 "backgroundColor": "#e74c3c",

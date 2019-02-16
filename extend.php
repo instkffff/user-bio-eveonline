@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\UserBio;
+namespace Instkffff\UserBioEve;
 
 use Flarum\Extend;
 use Illuminate\Contracts\Events\Dispatcher;
