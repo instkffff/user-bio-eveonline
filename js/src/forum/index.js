@@ -1,21 +1,46 @@
-import { extend } from 'flarum/extend';
+import { extend } from 'flarum/extend'
 import 'autolink-js'
-import computed from 'flarum/utils/computed';
-import UserCard from 'flarum/components/UserCard';
-import User from 'flarum/models/User';
-import Model from 'flarum/Model';
-import UserBio from './components/UserBio';
+import computed from 'flarum/utils/computed'
+import UserCard from 'flarum/components/UserCard'
+import LoadingIndicator from 'flarum/components/LoadingIndicator';
+import classList from 'flarum/utils/classList'
+import Model from 'flarum/Model'
+import User from 'flarum/models/User'
 
-app.initializers.add('fof-user-bio', () => {
-    User.prototype.bio = Model.attribute('bio');
-    User.prototype.bioHtml = computed('bio', bio => bio ? '<p>' + $('<div/>').text(bio).html().replace(/\n/g, '<br>').autoLink({rel: 'nofollow'}) + '</p>' : '');
+export default class UserBio extends Component {
+    
+    view(){
 
-    extend(UserCard.prototype, 'infoItems', function(items) {
+        const user = this.props.user
+        let content
+        let subContent
+
+        
+        const bioHtml = user.bioHtml()
+        subContent = m.trust(bioHtml)
+        
+
+        content = <div className="UserBio-content">{subContent}</div>
+
+        return (
+            <div className="UserBio">
+                {content}
+            </div>
+        )
+    }
+}
+
+
+app.initializers.add('instkffff-user-bio',()=> {
+    User.proptotype.bio = Model.attribute('bio')
+    User.proptotype.bioHtml = <p> {bio} </p>
+
+    extend(UserCard.prototype, 'infoItems' ,function(items){
         let user = this.props.user;
         items.add('bio',
             UserBio.component({
-                user,
+                user
             })
-        );
-    });
-});
+        )
+    })
+})
